@@ -310,11 +310,11 @@
                   [
                     { 
                       "name":"",
-                      "details":"Open the HTTPInputMessageFlow, and click the Flow Exerciser icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
+                      "details":"Open the HTTPInputMessageFlow, and click the Flow Exerciser icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
                     },
                     { 
                       "name":"",
-                      "details":"Click the Send Message icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
+                      "details":"Click the Send Message icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
                     },
 					{ 
                       "name":"",
@@ -330,7 +330,7 @@
 			  "section":"Click on any connection to see the data that passed through that connection. You can see that the request (input) message data has two fields named InputField1 and InputField2. The response (output) message has converted this to fields named OutputField1 and OutputField2."
 			  },
 			  {
-			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='http://ot4i.github.io/ot4i.tutorials/dist/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
+			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='http://ot4i.github.io/iib-tutorials/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
 			  }
             ]
           },
