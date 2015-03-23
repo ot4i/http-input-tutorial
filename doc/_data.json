@@ -1,85 +1,43 @@
 {
-  "version":"0.4",
-  "description":"Tutorial Content for Tutorial Framework.",
-  "header":
-  {
-    "lang":"en-us",
-    "charset":"UTF-8",
-    "metaDescription":"IBM Integration Bus Tutorial",
-    "metaAuthor":"IBM",
-    "keywords":"keywords",
-    "robots":"index,follow",
-    "source":"IBM Integration Bus Tutorial"
-  },
+  "version":"0.6",
   "pageContent": 
   {
-    "comments":"Must use underscore for en-us.",
+    "comments":"JSON object that contains data for page labels, buttons, etc.",
       "navItems":
       {
         "_common":
         {
-                "buttonBackToGallery": 
-				{
-                    "name": "Back To Gallery",
-					"method": "backToGallery()",
-					"idName": "backToGallery"	
-                },
-                "buttonStartTutorial": 
-				{
-                    "name": "Start Tutorial",
-					"method": "startTutorialFromDetailsScreen()",
-					"idName": "startTutorial"
-                }
-        },
-        "pageDetails":
-        {
-          "pageTitle":"Tutorial Overview",
-          "headlineMain":"IBM Integration Bus",
-          "headlineSub":"Show Me",
-          "section1":"Here you can explore and learn about IBM Integration Bus using tutorials.",
-          "section2":"What are you interested in?",
-          "dropdownSize":10,
-          "allTimeFavs":"ALL-TIME FAVORITES",
-          "tab1":
-          {
-            "text":"Tool Capabilities"
-          },
-          "tab2":
-          {
-            "text":"Scenarios"
-          }
-        },
-        "pageSteps":
-        {
-          "pageTitle":"Tutorial Steps",
-          "headlineMain":"IBM Integration Bus V10",
-          "headlineSub":"Show Me",
-          "section1":"Here you can explore and learn about IBM Integration Bus using tutorials.",
-          "section2":"What are you interested in?",
-          "dropdownSize":10,
-          "allTimeFavs":"ALL-TIME FAVORITES",
-          "tab1":
-          {
-            "text":"Tool Capabilities"
-          },
-          "tab2":
-          {
-            "text":"Scenarios"
-          }
-        }  
-      }
+			"buttonBackToGallery": 
+			{
+				"name": "Back To Gallery",
+				"method": "backToGallery()",
+				"idName": "backToGallery"	
+			},
+			"buttonStartTutorial": 
+			{
+				"name": "Start Tutorial",
+				"method": "startTutorialFromDetailsScreen()",
+				"idName": "startTutorial"
+			},
+			"buttonViewDetails":
+			{
+
+				"name": "View Details",
+				"method": "viewDetails()",
+				"idName": "stepsViewDetails"
+			}
+		}
+      }  
   },
   "tutorial": 
-  { "_common":
+  { 
+    "_common":
     {
       "name":"HTTP Input to drive a message flow",
       "shortDescription":"Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
-      "_comment_category":"Categories are either 'tool' or 'scenario'",
-      "category":"tool",
-      "isPattern" : "false",
-      "isFavorite"  : "true",
       "durationText":"This tutorial takes approximately",
       "durationTime":"5 minutes",
+	  "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
 	  "resourceToOpen":"MainFlow",
             "helpLink": 
 			{
@@ -90,33 +48,31 @@
     "pageDetails":
     {
       "topicsName":"Tutorial Topics",
+	  "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
       "topicList":
       [
         {
-          "title":"HTTP Input node",
-          "description":"HTTP Input node"
+          "title":"HTTP Input node"
         },
         {
-          "title":"JSON parsing and writing",
-          "description":"JSON parsing and writing"
+          "title":"JSON parsing and writing"
         },
         {
-          "title":"Transformation using graphical data mapping",
-          "description":"Transformation using graphical data mapping"
+          "title":"Transformation using graphical data mapping"
         }
       ],
       "outcomesName":"Learning outcomes",
+	  "_outcomesComment": "A description of what the user will have learned or accomplished by running this tutorial.",
       "outcomeList":
       [
         {
-          "title":"Use IBM Integration Bus to create and invoke a JSON/HTTP request-response message flow.",
-          "description":"Use IBM Integration Bus to create and invoke a JSON/HTTP request-response message flow."
+          "title":"Use IBM Integration Bus to create and invoke a JSON/HTTP request-response message flow."
         }
       ],
       "summary":
         {
-          "comments":"",
           "overviewName":"OVERVIEW",
+		  "_overviewComment": "A description of what happens in this tutorial, and an optional short explanation of the IIB concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
           "sections":
           [
             {
@@ -124,86 +80,38 @@
             },
             {
             "section":"In IBM Integration Bus, an application is a container for all the resources that are required to create a solution. An application can contain IBM Integration Bus resources, such as flows, message definitions, libraries, and JAR files. An application is used to hold the message flow in this tutorial.  If you have a WSDL document that describes a SOAP/HTTP interface you might consider using an integration service instead. See the Integration services (SOAP/HTTP inputs) tutorial for more details."
-            }
+            },
+              {
+              "section":"You will import the message flow to your Integration Toolkit workspace, and send an HTTP request to the message flow by using the Flow exerciser."
+              }
           ]
-        }
+        },
+		"helpLinks": 
+		{
+		"title": "Find out more",
+		"details" :
+		  [
+			{
+			"title":"Knowledge Center link to ",
+			"description":"Developing integration solutions by using applications",
+			"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+			}
+		  ]
+		}
       },
       "pageSteps":
       {
-        "concept":
-        {
-          "overview":
-          {
-            "comments":"",
-            "name":"Overview",
-            "heading":"Overview",
-            "sections":
-            [
-              {
-              "section":"This tutorial demonstrates a simple message flow that receives JSON data over HTTP. The flow transforms the input JSON structure into a different output JSON structure using a graphical data mapping node and sends this back to the HTTP request."
-              },
-              {
-              "section":"You will import the message flow to your Integration Toolkit workspace, deploy it to your default integration server, and invoke the message flow by using the Flow exerciser."
-              }
-            ]
-          },
-          "productComponentsUsed":
-          {
-            "comments":"",
-            "sections":
-            [
-              {
-              "section":"Application"
-              }
-            ]
-          },
-          "description":
-          {
-            "comment":"",
-            "sections":
-            [
-              {
-                "section":"Developing integration solutions by using applications."
-              }
-            ]
-          },
-		  "helpLinks": 
-			{
-			"title": "Find out more",
-			"details" :
-			  [
-				{
-				"title":"Knowledge Center link to ",
-				"description":"Developing integration solutions by using applications",
-				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
-				}
-			  ]
-		    }
-        },
         "create":
         {
           "overview":
           {
-            "comment":"",
             "name":"Create",
             "heading":"Import projects",
+			"_createComment": "A description of what will happen when the user clicks Import.",
             "sections":
             [
               {
                 "section":"The HTTPInputApplication application includes one project that is imported into your workspace."
-              }
-            ]
-          },
-          "description":
-          {
-            "comment":"",
-            "sections":
-            [
-              {
-                "section":"Developing integration solutions by using applications."
-              },
-              {
-                "section":"The HTTPInputApplication application is shown in the Application Development view of your workspace. You can explore the message flow HTTPInputMessageFlow.msgflow inside the application before deploying the application to an integration node."
               }
             ]
           },
@@ -219,50 +127,31 @@
 				}
 			  ]
 		    },
-                "actions": 
-				{
-                    "title": "Create Actions",
-                    "details": 
-					[
-                        {
-                            "name": "Import",
-                            "method": "importArtifacts()"
-                        }
-                    ]
-                }
+			"actions": 
+			{
+				"title": "Create Actions",
+				"details": 
+				[
+					{
+						"name": "Import",
+						"method": "importArtifacts()"
+					}
+				]
+			}
         },
         "prepare":
         {
           "overview":
           {
-            "comment":"",
             "name":"Prepare",
             "heading":"Imported projects",
             "sections":
             [
               {
                 "section":"The HTTPInputApplication application is shown in the Application Development view of your workspace."
-              }, 
-              {
-                "section":""
               },
               {
-                "section":"The application will be deployed to your default integration server. The message flow is then running on your integration server and ready to process messages."
-              }
-            ]
-          },
-          "description":
-          {
-            "comment":"",
-            "name":"Deploy details",
-            "heading":"",
-            "sections":
-            [
-              {
-                "section":"The HTTPInputApplication application will be deployed to your default integration server."
-              },
-              {
-                "section":"The message flow is then started and ready to process messages."
+                "section":"Next, you will use the Flow exerciser to send an HTTP request to the message flow."
               }
             ]
           },
@@ -292,13 +181,11 @@
         },
         "run":
         {
-          "cleanupName":"Clean up", 
-          "cleanupDescription":"Clean up and remove any changes made by the tutorial.", 
           "overview":
           {
-            "comments":"",
             "name":"Run",
             "heading":"Follow these steps to complete the tutorial",
+			"_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
             "sections":
             [
               {
@@ -351,18 +238,18 @@
 				}
 			  ]
 		    },
-				"exits": 
-				{
-					"title": "Run Exits",
-					"details": 
-					[
-						{
-							"name": "Clean Up",
-							"description": "Clean up and remove any changes in your workspace made by the tutorial.",
-							"method": "cleanUp()"
-						}
-					]
-				}
+			"exits": 
+			{
+				"title": "Run Exits",
+				"details": 
+				[
+					{
+						"name": "Clean Up",
+						"description": "Clean up and remove any changes in your workspace made by the tutorial.",
+						"method": "cleanUp()"
+					}
+				]
+			}
         } 
       }
     }
