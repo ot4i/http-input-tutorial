@@ -33,16 +33,16 @@
   { 
     "_common":
     {
-      "name":"HTTP Input to drive a message flow",
-      "shortDescription":"Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example.",
+      "name":"Provide an rpc-style raw HTTP service",
+      "shortDescription":"Learn how to use HTTPInput and HTTPReply nodes to handle raw rpc-style requests over http",
       "durationText":"This tutorial takes approximately",
       "durationTime":"5 minutes",
 	  "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
 	  "resourceToOpen":"MainFlow",
             "helpLink": 
 			{
-                "text": "IBM Knowledge Center",
-                "link": "/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm"
+                "text": "Processing HTTP messages",
+                "link": "com.ibm.etools.mft.doc/ac56650_.htm"
             }
     },
     "pageDetails":
@@ -66,7 +66,13 @@
       "outcomeList":
       [
         {
-          "title":"Use IBM Integration Bus to create and invoke a JSON/HTTP request-response message flow."
+          "title":"Develop a message flow which handles HTTP requests"
+        },
+        {
+          "title":"Learn how HTTP endpoints are hosted in Integration Bus"
+        },
+        {
+          "title":"Learn how to map JSON documents"
         }
       ],
       "summary":
@@ -76,14 +82,17 @@
           "sections":
           [
             {
-            "section":"This tutorial demonstrates a simple message flow that receives JSON data over HTTP. The flow transforms the input JSON structure into a different output JSON structure using a graphical data mapping node, and sends this back to the HTTP request."
+            "section":"In IBM Integration Bus, you have several options on how to create an HTTP interface to external programs."
             },
             {
-            "section":"In IBM Integration Bus, an application is a container for all the resources that are required to create a solution. An application can contain IBM Integration Bus resources, such as flows, message definitions, libraries, and JAR files. An application is used to hold the message flow in this tutorial.  If you have a WSDL document that describes a SOAP/HTTP interface you might consider using an integration service instead. See the Integration services (SOAP/HTTP inputs) tutorial for more details."
+            "section":"If you want to use a standard interface definition, there are specialised development artefacts which simplify that process.  If you use WSDL for Web Service interactions then create an Integration Service, and if you use Swagger to define REST-style actions over a set of resources then create a REST API."
             },
-              {
+            {
+            "section":"However there are some http interactions which don't fit either of these categories. This tutorial shows how to create an RPC-style interaction over raw HTTP, where all requests to a particular URL are routed to a message flow for processing. In this case, the processing is a transformation step using a Mapping node."
+            },
+            {
               "section":"You will import the message flow to your Integration Toolkit workspace, and send an HTTP request to the message flow by using the Flow exerciser."
-              }
+            }
           ]
         },
 		"helpLinks": 
@@ -95,7 +104,13 @@
 			"title":"Knowledge Center link to ",
 			"description":"Developing integration solutions by using applications",
 			"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+			},
+			{
+			"title":"Knowledge Center link to ",
+			"description":"Processing HTTP messages",
+			"link":"com.ibm.etools.mft.doc/ac56650_.htm"
 			}
+
 		  ]
 		}
       },
@@ -111,7 +126,7 @@
             "sections":
             [
               {
-                "section":"The HTTPInputApplication application includes one project that is imported into your workspace."
+                "section":"Click on the Import link to create and open the HTTPInputApplication project in your workspace. Then click on the Prepare tab to see a description of what has been imported."
               }
             ]
           },
@@ -148,10 +163,16 @@
             "sections":
             [
               {
-                "section":"The HTTPInputApplication application is shown in the Application Development view of your workspace."
+                "section":"You now have a project in your workspace called HTTPInputApplication, which is shown under the Application Development section of your workbench. Inside that project is one message flow called HTTPInputMessageFlow, which has been opened for you. There is also a mapping file called HTTPInputMessageFlow_Mapping.map."
               },
               {
-                "section":"Next, you will use the Flow exerciser to send an HTTP request to the message flow."
+                "section":"Look at the Properties view for the HTTP Input node. The Basic tab configures the Path suffix for URL, which forms the endpoint that is exposed by this flow. The exact URL exposed to external applications depends on the listener port which has been configured for HTTP nodes on that Integration Node. Note also that the Input Message Parsing tab has been configured with JSON, because this message flow expects to receive JSON data on that URL."
+              },
+              {
+                "section":"Double-click on the Mapping node to show the transformation which this flow performs on its requests. The example here shows that both input and outputs are both JSON format, and the input has been modelled as containing two input fields which are mapped to two output fields of different labels. A Move transform has been used, so the data is unchanged, but the field names will change. There is no separate message model file for these input and output types; the map itself has been refined to specify these fields by adding user-defined elements under the JSONObject type."
+              },
+              {
+                "section":"Next, you will use the Flow exerciser to deploy send an HTTP request to the message flow, and to observe the transformation. Click Run to see those steps."
               }
             ]
           },
@@ -162,9 +183,20 @@
 			  [
 				{
 				"title":"Knowledge Center link to ",
-				"description":"Developing integration solutions by using integration services",
-				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+				"description":"Processing HTTP messages",
+				"link":"com.ibm.etools.mft.doc/ac56650_.htm"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"HTTP listeners",
+				"link":"com.ibm.etools.mft.doc/bc43700_.htm"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Creating or transforming a JSON message with a message map",
+				"link":"com.ibm.etools.mft.doc/sm12004_.htm"
 				}
+
 			  ]
 		    },
 			"actions-removed": 
