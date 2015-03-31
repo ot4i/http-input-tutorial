@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html class="no-js" lang="en">
  
@@ -43,16 +44,16 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4 class="title">HTTP Input to drive a message flow <action><div class="small radius button" id="stepsViewDetails" onclick="viewDetails()"> View Details</div> </action></h4>
+	    <h4 class="title">Provide an rpc-style raw HTTP service <action><div class="small radius button" id="stepsViewDetails" onclick="viewDetails()"> View Details</div> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
-		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.msgbroker.helphome.doc/help_home_msgbroker.htm')" class="small right helplink">IBM Knowledge Center</a> 
+		<a href="javascript:;" onclick="openHelpSystem('com.ibm.etools.mft.doc/ac56650_.htm')" class="small right helplink">Processing HTTP messages</a> 
 	  </div>
 	</div> 
 	<hr>
 	<div class="row">
 		<div class="small-10 medium-10 large-10 columns">
-		<h5> Learn how to use an HTTPInput node to parse JSON data in an IBM Integration Bus message flow by exploring this simple example. </h5>
+		<h5> Learn how to use HTTPInput and HTTPReply nodes to handle raw rpc-style requests over http </h5>
 		</div>
 		<div class="small-2 medium-2 large-2 columns">
 			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> Back To Gallery
@@ -82,7 +83,7 @@
 					      	<h4>Import projects</h4>
 					        
 						    
-								<p> The HTTPInputApplication application includes one project that is imported into your workspace. </p>
+								<p> Click on the Import link to create and open the HTTPInputApplication project in your workspace. Then click on the Prepare tab to see a description of what has been imported. </p>
 								
 							
 						</div>
@@ -117,10 +118,16 @@
 						  	<h4>Imported projects</h4>
 						    
 						    
-								<p> The HTTPInputApplication application is shown in the Application Development view of your workspace. </p>
+								<p> You now have a project in your workspace called HTTPInputApplication, which is shown under the Application Development section of your workbench. Inside that project is one message flow called HTTPInputMessageFlow, which has been opened for you. There is also a mapping file called HTTPInputMessageFlow_Mapping.map. </p>
 								
 							
-								<p> Next, you will use the Flow exerciser to send an HTTP request to the message flow. </p>
+								<p> Look at the Properties view for the HTTP Input node. The Basic tab configures the Path suffix for URL, which forms the endpoint that is exposed by this flow. The exact URL exposed to external applications depends on the listener port which has been configured for HTTP nodes on that Integration Node. Note also that the Input Message Parsing tab has been configured with JSON, because this message flow expects to receive JSON data on that URL. </p>
+								
+							
+								<p> Double-click on the Mapping node to show the transformation which this flow performs on its requests. The example here shows that both input and outputs are both JSON format, and the input has been modelled as containing two input fields which are mapped to two output fields of different labels. A Move transform has been used, so the data is unchanged, but the field names will change. There is no separate message model file for these input and output types; the map itself has been refined to specify these fields by adding user-defined elements under the JSONObject type. </p>
+								
+							
+								<p> Next, you will use the Flow exerciser to deploy send an HTTP request to the message flow, and to observe the transformation. Click Run to see those steps. </p>
 								
 							
 						</div>
@@ -131,7 +138,17 @@
 							
 								
 																
-								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to Developing integration solutions by using integration services">Developing integration solutions by using integration services</a> </li>
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac56650_.htm')" title="Knowledge Center link to Processing HTTP messages">Processing HTTP messages</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/bc43700_.htm')" title="Knowledge Center link to HTTP listeners">HTTP listeners</a> </li>
+							   	
+							
+								
+																
+								<li> <a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/sm12004_.htm')" title="Knowledge Center link to Creating or transforming a JSON message with a message map">Creating or transforming a JSON message with a message map</a> </li>
 							   	
 							
 							</ul>
@@ -155,11 +172,11 @@
 									<ol>
 									
 									
-										<li> Open the HTTPInputMessageFlow, and click the Flow Exerciser icon <img src="http://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png" alt=""> to start recording the message path through the flow.
+										<li> Open the HTTPInputMessageFlow, and click the Flow Exerciser icon <img src="http://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
 										
 										</li>
 									
-										<li> Click the Send Message icon <img src="http://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png" alt=""> to select a message to send to the flow.
+										<li> Click the Send Message icon <img src="http://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png" alt> to select a message to send to the flow.
 										
 										</li>
 									
