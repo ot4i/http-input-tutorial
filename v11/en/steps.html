@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js" lang="en">
  
@@ -16,14 +15,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<meta name="copyright" content="Copyright IBM Corporation 2014" />
-		<meta name="abstract" content="IBM Integration Bus V10 Tutorial">
+		<meta name="abstract" content="IBM App Connect Enterprise V11 Tutorial">
 		<meta name="author" content="IBM">
-		<meta name="description" content="IBM Integration Bus V10 Tutorial">
+		<meta name="description" content="IBM App Connect Enterprise V11 Tutorial">
 		<meta name="keywords" content="keywords" > 
 		<meta name="robots" content="index,follow">
-		<meta name="source" content="IBM Integration Bus V10 Tutorial" /> 
+		<meta name="source" content="IBM App Connect Enterprise V11 Tutorial" /> 
 		
-		<title>IBM Integration Bus V10 Tutorial</title>
+		<title>IBM App Connect Enterprise V11 Tutorial</title>
 
     	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
 		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
@@ -44,7 +43,7 @@
 	</div>
 	<div class="row">
 	  <div class="small-9 medium-9 large-9 columns">
-	    <h4 class="title">HTTP Input to drive a message flow <action><div class="small radius button" id="stepsViewDetails" onclick="viewDetails()"> View Details</div> </action></h4>
+	    <h4 class="title">Using a HTTP Input to drive a message flow <action><button class="small radius button" tabindex="0" id="stepsViewDetails" onclick="viewDetails()"> View Details</button> </action></h4>
 	  </div>
 	  <div class="small-3 medium-3 large-3 columns">
 		<a href="javascript:;" onclick="openHelpSystem('/com.ibm.etools.mft.doc/ac56650_.htm')" class="small right helplink">Processing HTTP messages</a> 
@@ -56,8 +55,8 @@
 		<h5> Learn how to use HTTPInput and HTTPReply nodes to expose an http URL that can drive a message flow </h5>
 		</div>
 		<div class="small-2 medium-2 large-2 columns">
-			<div class="small radius button right" id="backToGallery" onclick="backToGallery()"> Back To Gallery
-			</div>
+			<button class="small radius button right" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
 		</div>
 	</div>
 	<div class="row">          
@@ -83,7 +82,7 @@
 					      	<h4>Import projects</h4>
 					        
 						    
-								<p> Click on the Import link to create and open the HTTPInputApplication project in your workspace. Then click on the Prepare tab to see a description of what has been imported. </p>
+								<p> Click on the Import link to create and open the <span class="application">HTTPInputApplication</span> project in your workspace. Then click on the Prepare tab to see a description of what has been imported. </p>
 								
 							
 						</div>
@@ -118,7 +117,7 @@
 						  	<h4>Imported projects</h4>
 						    
 						    
-								<p> You now have a project in your workspace called HTTPInputApplication, which is shown under the Application Development section of your workbench. Inside that project is one message flow called HTTPInputMessageFlow, which has been opened for you. There is also a mapping file called HTTPInputMessageFlow_Mapping.map. </p>
+								<p> You now have a project in your workspace called <span class="application">HTTPInputApplication</span>, which is shown under the Application Development section of your workbench. Inside that project is one message flow called <span class="application">HTTPInputMessageFlow</span>, which has been opened for you. There is also a mapping file called <span class="application">HTTPInputMessageFlow_Mapping.map</span>. </p>
 								
 							
 								<p> Look at the Properties view for the HTTP Input node. The Basic tab configures the Path suffix for URL, which forms the endpoint that is exposed by this flow. The exact URL exposed to external applications depends on the listener port which has been configured for HTTP nodes on that Integration Node. Note also that the Input Message Parsing tab has been configured with JSON, because this message flow expects to receive JSON data on that URL. </p>
@@ -165,14 +164,14 @@
 					      	<h4>Follow these steps to complete the tutorial</h4>
 					        
 						    
-								<p> The HTTPInputApplication application is shown in the Application Development view of your workspace. </p>
+								<p> The <span class="application">HTTPInputApplication</span> application is shown in the Application Development view of your workspace. </p>
 								
 								
 									
 									<ol>
 									
 									
-										<li> Open the HTTPInputMessageFlow, and click the Flow Exerciser icon <img src="https://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
+										<li> Open the <span class="application">HTTPInputMessageFlow</span>, and click the Flow Exerciser icon <img src="https://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png" alt> to start recording the message path through the flow.
 										
 										</li>
 									
