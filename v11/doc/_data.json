@@ -41,8 +41,8 @@
 	  "resourceToOpen":"MainFlow",
             "helpLink": 
 			{
-                "text": "Processing HTTP messages",
-                "link": "/com.ibm.etools.mft.doc/ac56650_.htm"
+                "text": "IBM Knowledge Center",
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
             }
     },
     "pageDetails":
@@ -103,12 +103,14 @@
 			{
 			"title":"Knowledge Center link to ",
 			"description":"Developing integration solutions by using applications",
-			"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+			"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+			"type":"web"
 			},
 			{
 			"title":"Knowledge Center link to ",
 			"description":"Processing HTTP messages",
-			"link":"com.ibm.etools.mft.doc/ac56650_.htm"
+			"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/ac56650_.htm",
+			"type":"web"
 			}
 
 		  ]
@@ -138,7 +140,8 @@
 				{
 				"title":"Knowledge Center link to ",
 				"description":"Developing integration solutions by using applications",
-				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+				"type":"web"
 				}
 			  ]
 		    },
@@ -184,17 +187,20 @@
 				{
 				"title":"Knowledge Center link to ",
 				"description":"Processing HTTP messages",
-				"link":"com.ibm.etools.mft.doc/ac56650_.htm"
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/ac56650_.htm",
+				"type":"web"
 				},
 				{
 				"title":"Knowledge Center link to ",
 				"description":"HTTP listeners",
-				"link":"com.ibm.etools.mft.doc/bc43700_.htm"
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bc43700_.htm",
+				"type":"web"
 				},
 				{
 				"title":"Knowledge Center link to ",
 				"description":"Creating or transforming a JSON message with a message map",
-				"link":"com.ibm.etools.mft.doc/sm12004_.htm"
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/sm12004_.htm",
+				"type":"web"
 				}
 
 			  ]
@@ -261,27 +267,17 @@
 				{
 				"title":"Knowledge Center link to ",
 				"description":"Developing integration solutions by using applications",
-				"link":"com.ibm.etools.mft.doc/bi12002_.htm"
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+				"type":"web"
 				},
 				{
 				"title":"Knowledge Center link to ",
 				"description":"Testing your message flow by using the Flow exerciser",
-				"link":"com.ibm.etools.mft.doc/rt26110_.htm"
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm",
+				"type":"web"
 				}
 			  ]
-		    },
-			"exits": 
-			{
-				"title": "Run Exits",
-				"details": 
-				[
-					{
-						"name": "Clean Up",
-						"description": "Clean up and remove any changes in your workspace made by the tutorial.",
-						"method": "cleanUp()"
-					}
-				]
-			}
+		    }
         } 
       }
     }
