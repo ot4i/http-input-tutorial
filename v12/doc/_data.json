@@ -1,0 +1,284 @@
+{
+  "version":"0.6",
+  "pageContent": 
+  {
+    "comments":"JSON object that contains data for page labels, buttons, etc.",
+      "navItems":
+      {
+        "_common":
+        {
+			"buttonBackToGallery": 
+			{
+				"name": "Back To Gallery",
+				"method": "backToGallery()",
+				"idName": "backToGallery"	
+			},
+			"buttonStartTutorial": 
+			{
+				"name": "Start Tutorial",
+				"method": "startTutorialFromDetailsScreen()",
+				"idName": "startTutorial"
+			},
+			"buttonViewDetails":
+			{
+
+				"name": "View Details",
+				"method": "viewDetails()",
+				"idName": "stepsViewDetails"
+			}
+		}
+      }  
+  },
+  "tutorial": 
+  { 
+    "_common":
+    {
+      "name":"Using a HTTP Input to drive a message flow",
+      "shortDescription":"Learn how to use HTTPInput and HTTPReply nodes to expose an http URL that can drive a message flow",
+      "durationText":"This tutorial takes approximately",
+      "durationTime":"5 minutes",
+	  "_resourceToOpenComment": "The ID of the first resource to open when the user imports the tutorial. Resource IDs are defined in the repo_metadata.json Tutorials listing on ot4i.",
+	  "resourceToOpen":"MainFlow",
+            "helpLink": 
+			{
+                "text": "IBM Knowledge Center",
+           		"link": "https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm"
+            }
+    },
+    "pageDetails":
+    {
+      "topicsName":"Tutorial Topics",
+	  "_topicListComment": "A short list of product concepts or tasks demonstrated by this tutorial",
+      "topicList":
+      [
+        {
+          "title":"HTTP Input node"
+        },
+        {
+          "title":"JSON parsing and writing"
+        },
+        {
+          "title":"Transformation using graphical data mapping"
+        }
+      ],
+      "outcomesName":"Learning outcomes",
+	  "_outcomesComment": "A description of what the user will have learned or accomplished by running this tutorial.",
+      "outcomeList":
+      [
+        {
+          "title":"Develop a message flow which handles HTTP requests"
+        },
+        {
+          "title":"Learn how HTTP endpoints are hosted in IBM App Connect Enterprise"
+        },
+        {
+          "title":"Learn how to map JSON documents"
+        }
+      ],
+      "summary":
+        {
+          "overviewName":"OVERVIEW",
+		  "_overviewComment": "A description of what happens in this tutorial, and an optional short explanation of the ACE concepts used in this tutorial if necessary for context. What background knowledge must the user have for this to make sense?",
+          "sections":
+          [
+            {
+            "section":"In IBM App Connect Enterprise, you have several options on how to create an HTTP interface to external programs."
+            },
+            {
+            "section":"If you want to use a standard interface definition, there are specialised development artefacts which simplify that process.  If you use WSDL for Web Service interactions then create an Integration Service, and if you use Swagger to define REST-style actions over a set of resources then create a REST API."
+            },
+            {
+            "section":"However there are some http interactions which don't fit either of these categories. This tutorial shows how to create an RPC-style interaction over raw HTTP, where all requests to a particular URL are routed to a message flow for processing. In this case, the processing is a transformation step using a Mapping node."
+            },
+            {
+              "section":"You will import the message flow to your Toolkit workspace, and send an HTTP request to the message flow by using the Flow exerciser."
+            }
+          ]
+        },
+		"helpLinks": 
+		{
+		"title": "Find out more",
+		"details" :
+		  [
+			{
+			"title":"Knowledge Center link to ",
+			"description":"Developing integration solutions by using applications",
+			"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+			"type":"web"
+			},
+			{
+			"title":"Knowledge Center link to ",
+			"description":"Processing HTTP messages",
+			"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/ac56650_.htm",
+			"type":"web"
+			}
+
+		  ]
+		}
+      },
+      "pageSteps":
+      {
+        "create":
+        {
+          "overview":
+          {
+            "name":"Create",
+            "heading":"Import projects",
+			"_createComment": "A description of what will happen when the user clicks Import.",
+            "sections":
+            [
+              {
+                "section":"Click on the Import link to create and open the <span class='application'>HTTPInputApplication</span> project in your workspace. Then click on the Prepare tab to see a description of what has been imported."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using applications",
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+				"type":"web"
+				}
+			  ]
+		    },
+			"actions": 
+			{
+				"title": "Create Actions",
+				"details": 
+				[
+					{
+						"name": "Import",
+						"method": "importArtifacts()"
+					}
+				]
+			}
+        },
+        "prepare":
+        {
+          "overview":
+          {
+            "name":"Prepare",
+            "heading":"Imported projects",
+            "sections":
+            [
+              {
+                "section":"You now have a project in your workspace called <span class='application'>HTTPInputApplication</span>, which is shown under the Application Development section of your workbench. Inside that project is one message flow called <span class='application'>HTTPInputMessageFlow</span>, which has been opened for you. There is also a mapping file called <span class='application'>HTTPInputMessageFlow_Mapping.map</span>."
+              },
+              {
+                "section":"Look at the Properties view for the HTTP Input node. The Basic tab configures the Path suffix for URL, which forms the endpoint that is exposed by this flow. The exact URL exposed to external applications depends on the listener port which has been configured for HTTP nodes on that Integration Node. Note also that the Input Message Parsing tab has been configured with JSON, because this message flow expects to receive JSON data on that URL."
+              },
+              {
+                "section":"Double-click on the Mapping node to show the transformation which this flow performs on its requests. The example here shows that both input and outputs are both JSON format, and the input has been modelled as containing two input fields which are mapped to two output fields of different labels. A Move transform has been used, so the data is unchanged, but the field names will change. There is no separate message model file for these input and output types; the map itself has been refined to specify these fields by adding user-defined elements under the JSONObject type."
+              },
+              {
+                "section":"Next, you will use the Flow exerciser to deploy send an HTTP request to the message flow, and to observe the transformation. Click Run to see those steps."
+              }
+            ]
+          },
+          "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Processing HTTP messages",
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/ac56650_.htm",
+				"type":"web"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"HTTP listeners",
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bc43700_.htm",
+				"type":"web"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Creating or transforming a JSON message with a message map",
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/sm12004_.htm",
+				"type":"web"
+				}
+
+			  ]
+		    },
+			"actions-removed": 
+				{
+                    "title": "Prepare Actions",
+                    "details": 
+					[
+                        {
+                            "name": "Deploy",
+                            "method": "deployArtifacts()"
+                        }
+                    ]
+                }
+        },
+        "run":
+        {
+          "overview":
+          {
+            "name":"Run",
+            "heading":"Follow these steps to complete the tutorial",
+			"_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
+            "sections":
+            [
+              {
+              "section":"The <span class='application'>HTTPInputApplication</span> application is shown in the Application Development view of your workspace.", 
+                "steps":
+                {
+                "type":"ordered",
+                "details":
+                  [
+                    { 
+                      "name":"",
+                      "details":"Open the <span class='application'>HTTPInputMessageFlow</span>, and click the Flow Exerciser icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
+                    },
+                    { 
+                      "name":"",
+                      "details":"Click the Send Message icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/sendMessage.png' alt='' /> to select a message to send to the flow."
+                    },
+					{ 
+                      "name":"",
+                      "details":"Choose the ExampleInputMessage1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node."
+                    }
+                  ]
+                }
+              },
+			  {
+              "section":"After the request message is processed, the message path is automatically highlighted on the message flow."
+			  },
+			  {
+			  "section":"Click on any connection to see the data that passed through that connection. You can see that the request (input) message data has two fields named InputField1 and InputField2. The response (output) message has converted this to fields named OutputField1 and OutputField2."
+			  },
+			  {
+			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
+			  }
+            ]
+          },
+		  "helpLinks": 
+			{
+			"title": "Find out more",
+			"details" :
+			  [
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Developing integration solutions by using applications",
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm",
+				"type":"web"
+				},
+				{
+				"title":"Knowledge Center link to ",
+				"description":"Testing your message flow by using the Flow exerciser",
+				"link":"https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/rt26110_.htm",
+				"type":"web"
+				}
+			  ]
+		    }
+        } 
+      }
+    }
+  }
