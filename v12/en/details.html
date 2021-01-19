@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+ 
+	
+<!-- header::Start -->
+	<head>
+		<!-- Use Internet Explorer 9 Standards mode for Eclipse Browser Control - https://www.eclipse.org/swt/faq.php#browsernativeie and https://msdn.microsoft.com/en-us/library/jj676915%28v=vs.85%29.aspx -->
+  		<meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+		
+		<!-- Next 2 http=equiv headers required to disable caching the Eclipse Browser Widget -->
+		<meta http-equiv="Pragma" content="no-cache">
+  		<meta http-equiv="Expires" content="-1">
+
+		<meta charset="UTF-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="copyright" content="Copyright IBM Corporation 2014" />
+		<meta name="abstract" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="author" content="IBM">
+		<meta name="description" content="IBM App Connect Enterprise V11 Tutorial">
+		<meta name="keywords" content="keywords" > 
+		<meta name="robots" content="index,follow">
+		<meta name="source" content="IBM App Connect Enterprise V11 Tutorial" /> 
+		
+		<title>IBM App Connect Enterprise V11 Tutorial</title>
+
+    	<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/main.css" />
+		<link rel="stylesheet" href="https://ot4i.github.io/iib-tutorials/css/app.css" />
+    	
+		<script src="https://ot4i.github.io/iib-tutorials/js/json2.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/js2java_steps.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/modernizr.js"></script>
+	</head>
+<!-- header::End -->
+<!-- body::Start -->
+		<body>
+    <!-- body content here -->
+  <div class="row">
+    <div class="small-12 medium-12 large-12 columns">
+      <p> </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-9 medium-9 large-9 columns">
+      <h4>Using a HTTP Input to drive a message flow</h4>
+    </div>
+    <div class="small-3 medium-3 large-3 columns"> 
+      <!--a href="javascript:;" onclick="openHelpSystem('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.ace.home.doc/help_home.htm');" class="small right helplink">IBM Knowledge Center</a-->
+    </div>
+  </div> 
+  <hr>
+  <div class="row">
+    <div class="small-12 medium-12 large-12 columns">
+      <h5> Learn how to use HTTPInput and HTTPReply nodes to expose an http URL that can drive a message flow </h5>
+    </div>
+  </div>
+  <div class="row content-details">
+    <div class="small-6 medium-6 large-6 columns">
+      <div class="row">
+        <h5> OVERVIEW </h5>
+      </div>
+      <div class="row">
+      
+        
+        <p> In IBM App Connect Enterprise, you have several options on how to create an HTTP interface to external programs. </p>
+      
+        <p> If you want to use a standard interface definition, there are specialised development artefacts which simplify that process.  If you use WSDL for Web Service interactions then create an Integration Service, and if you use Swagger to define REST-style actions over a set of resources then create a REST API. </p>
+      
+        <p> However there are some http interactions which don&#39;t fit either of these categories. This tutorial shows how to create an RPC-style interaction over raw HTTP, where all requests to a particular URL are routed to a message flow for processing. In this case, the processing is a transformation step using a Mapping node. </p>
+      
+        <p> You will import the message flow to your Toolkit workspace, and send an HTTP request to the message flow by using the Flow exerciser. </p>
+      
+      </div>	  
+		<!-- help links do not work in details page for GA 
+        
+		<div class="row content-details">
+			<h4>Find out more</h4>
+			<ul>
+			
+				
+				
+				<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/bi12002_.htm')" title="Knowledge Center link to  Developing integration solutions by using applications">Developing integration solutions by using applications</a> </li>
+					
+			
+				
+				
+				<li> <a href="javascript:;" onclick="openExternalBrowser('https://www.ibm.com/support/knowledgecenter/en/SSTTDS_11.0.0/com.ibm.etools.mft.doc/ac56650_.htm')" title="Knowledge Center link to  Processing HTTP messages">Processing HTTP messages</a> </li>
+					
+			
+			</ul>
+		</div>
+				  
+        -->
+        
+    </div><!-- End Columns -->
+    <div class="small-offset-1 small-5 medium-offset-1 medium-5 large-offset-1 large-5 columns">
+      <div class="row">
+        <div class="panel radius" style="margin:0px; margin-bottom:10px; padding:5px">
+          <div class="row">
+            <div class="small-2 medium-2 large-2 columns">
+              <img class="icon-image" src="https://ot4i.github.io/iib-tutorials/images/icons/ibmdesign/clock-time_128.png">
+            </div>
+            <div class="small-10 large-10 columns">
+              This tutorial takes approximately <b>5 minutes</b>.
+            </div>
+          </div>
+          <div class="row" style="margin-left: 1rem; text-align: center">
+            <action>
+              <button class="small radius button" tabindex="0" id="startTutorial" onclick="startTutorialFromDetailsScreen()"> Start Tutorial
+            </button>
+            </action>
+            <button class="small radius button" tabindex="0" id="backToGallery" onclick="backToGallery()"> Back To Gallery
+			</button>
+          </div>
+        </div>
+      </div>
+      <div class="row content-details">
+        <div class="small-6 medium-6 large-6 columns">
+          <h5> Tutorial Topics </h5>
+          <ul>
+            
+            
+              <li>HTTP Input node</li>
+            
+              <li>JSON parsing and writing</li>
+            
+              <li>Transformation using graphical data mapping</li>
+            
+          </ul>
+        </div>
+        <div class="small-6 medium-6 large-6 columns">
+          <h5>Learning outcomes </h5>
+          <ul>
+          
+          
+            <li>Develop a message flow which handles HTTP requests</li>
+          
+            <li>Learn how HTTP endpoints are hosted in IBM App Connect Enterprise</li>
+          
+            <li>Learn how to map JSON documents</li>
+          
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div></body>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/jquery.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/vendor/foundation.min.js"></script>
+		<script src="https://ot4i.github.io/iib-tutorials/js/main.js"></script>
+	</body>
+<!-- body::End -->
+
+</html>
