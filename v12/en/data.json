@@ -175,7 +175,7 @@
                 "section":"Double-click on the Mapping node to show the transformation which this flow performs on its requests. The example here shows that both input and outputs are both JSON format, and the input has been modelled as containing two input fields which are mapped to two output fields of different labels. A Move transform has been used, so the data is unchanged, but the field names will change. There is no separate message model file for these input and output types; the map itself has been refined to specify these fields by adding user-defined elements under the JSONObject type."
               },
               {
-                "section":"Next, you will use the Flow exerciser to deploy send an HTTP request to the message flow, and to observe the transformation. Click Run to see those steps."
+                "section":"Next, you will use the Flow exerciser to deploy the message flow, send an HTTP request to it, and observe the transformation. Click Run to see those steps."
               }
             ]
           },
@@ -226,6 +226,19 @@
 			"_runComment": "The full steps for the user to run through the tutorial. Use 'sections' to render paragraphs, 'steps' with a type of 'ordered' or 'unordered' to render HTML lists, and 'substeps' to render nested lists.",
             "sections":
             [
+				{
+				 "section":"<b>Create a local Integration Server for testing the flow</b>",
+				    "steps":
+                        {
+                          "type": "ordered",
+                          "details":
+                          [
+                            {
+                                "details": "Next we will test the message flow using a local integration server, which we can create from within the Toolkit. From the Integration Explorer view in the bottom left corner of the Toolkit, right-click the Integration Servers folder and select the option to <span class='application'>Create a local integration server</span>. Leave all the options with their default values and click Finish. The local Integration Server will be started, using a project in your Toolkit's workspace as the work directory. Click OK to dismiss the Success dialog."
+                            }
+                          ]
+                        }
+				},
               {
               "section":"The <span class='application'>HTTPInputApplication</span> application is shown in the Application Development view of your workspace.", 
                 "steps":
