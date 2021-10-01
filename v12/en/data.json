@@ -227,7 +227,7 @@
             "sections":
             [
 				{
-				 "section":"<b>Create a local Integration Server for testing the flow</b>",
+				 "section":"<b>Create a local Integration Server for testing the flow:</b>",
 				    "steps":
                         {
                           "type": "ordered",
@@ -240,7 +240,7 @@
                         }
 				},
               {
-              "section":"The <span class='application'>HTTPInputApplication</span> application is shown in the Application Development view of your workspace.", 
+              "section":"<b>Test the message flow using the Flow Exerciser:</b>", 
                 "steps":
                 {
                 "type":"ordered",
@@ -248,7 +248,7 @@
                   [
                     { 
                       "name":"",
-                      "details":"Open the <span class='application'>HTTPInputMessageFlow</span>, and click the Flow Exerciser icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
+                      "details":"The <span class='application'>HTTPInputApplication</span> application is shown in the Application Development view of your workspace. Open the <span class='application'>HTTPInputMessageFlow</span>, and click the Flow Exerciser icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/startFlowExerciser.png' alt='' /> to start recording the message path through the flow."
                     },
                     { 
                       "name":"",
@@ -256,7 +256,7 @@
                     },
 					{ 
                       "name":"",
-                      "details":"Choose the ExampleInputMessage1, edit the message data if you like, and click Send. Your request message is sent to the HTTP input node."
+                      "details":"Choose the ExampleInputMessage1 and click Send. Your request message is sent to the HTTP input node."
                     }
                   ]
                 }
@@ -268,7 +268,7 @@
 			  "section":"Click on any connection to see the data that passed through that connection. You can see that the request (input) message data has two fields named InputField1 and InputField2. The response (output) message has converted this to fields named OutputField1 and OutputField2."
 			  },
 			  {
-			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon <img src='https://ot4i.github.io/iib-tutorials/images/icons/iib/stopFlowExerciser.png' alt='Return flow to edit mode' />."
+			  "section":"To stop recording the message path through the flow, click the Return flow to edit mode icon."
 			  }
             ]
           },
