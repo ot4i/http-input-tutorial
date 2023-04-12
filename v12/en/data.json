@@ -33,7 +33,7 @@
   { 
     "_common":
     {
-      "name":"Using a HTTP Input to drive a message flow",
+      "name":"Using an HTTP Input to drive a message flow",
       "shortDescription":"Learn how to use HTTPInput and HTTPReply nodes to expose an http URL that can drive a message flow",
       "durationText":"This tutorial takes approximately",
       "durationTime":"5 minutes",
